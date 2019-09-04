@@ -8,4 +8,10 @@ public class Probability {
         this.value=value;
     }
 
+    public boolean equals(Object object)
+    {
+        Probability that= (Probability) object;
+        return this.value==that.value;
+    }
+
 }
