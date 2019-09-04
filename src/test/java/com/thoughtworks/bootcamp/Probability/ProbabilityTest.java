@@ -34,4 +34,10 @@ public class ProbabilityTest {
     void givenOneOccurenceProbability_whenCheckEquality_thenShouldReturnZero() {
         assertEquals(certainEvents.not(),imposibleEvents);
     }
+
+    @Test
+    void givenTwoCertainOccurenceProbability_whenCalculatingProbabilityOfvEentOccuringTogether_thenShouldReturnOne(){
+        Probability headsInACoinToss=new Probability(0.5f);
+        assertEquals(new Probability(0.25f),headsInACoinToss.and(headsInACoinToss));
+    }
 }

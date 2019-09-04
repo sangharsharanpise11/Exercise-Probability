@@ -15,4 +15,8 @@ public class Probability {
     public Probability not() {
         return new Probability(1.0f-value);
     }
+
+    public Probability and(Probability headsInACoinToss) {
+        return new Probability((value * headsInACoinToss.value));
+    }
 }
