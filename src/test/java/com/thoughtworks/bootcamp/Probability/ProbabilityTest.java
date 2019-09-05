@@ -45,4 +45,16 @@ public class ProbabilityTest {
     void givenTwoImposibleEvents_whenCalculatingProbabilityOfEitherEventOccuring_thenShouldReturnZero(){
         assertEquals(imposibleEvents,imposibleEvents.or(imposibleEvents));
     }
+
+    @Test
+    void givenImpossibleEventAndCertainEvent_whenCalculatingProbabilityOfEitherTwoEventOccuring_thenReturnOne(){
+        assertEquals(certainEvents,imposibleEvents.or(certainEvents));
+    }
+
+    @Test
+    void givenTwoProbabilityOfHeadAndTailsInCoinToss_whenCalculatingProbabilityOfTwoEventOccuring_thenReturnProbabilityOfOneCard(){
+        Probability headsInACoinToss=new Probability(0.5f);
+        Probability tailInACoinToss=new Probability(0.5f);
+        assertEquals(new Probability(0.75f),headsInACoinToss.or(tailInACoinToss));
+    }
 }
