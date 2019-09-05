@@ -16,7 +16,11 @@ public class Probability {
         return new Probability(1.0f-value);
     }
 
-    public Probability and(Probability headsInACoinToss) {
-        return new Probability((value * headsInACoinToss.value));
+    public Probability and(Probability probabilityEvents) {
+        return new Probability((value * probabilityEvents.value));
     }
+
+    public Probability or(Probability event) {
+        return new Probability(value).not().and(new Probability(event.value).not()).not();
+  }
 }

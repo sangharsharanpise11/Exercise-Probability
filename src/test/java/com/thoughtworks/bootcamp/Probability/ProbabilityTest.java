@@ -40,4 +40,9 @@ public class ProbabilityTest {
         Probability headsInACoinToss=new Probability(0.5f);
         assertEquals(new Probability(0.25f),headsInACoinToss.and(headsInACoinToss));
     }
+
+    @Test
+    void givenTwoImposibleEvents_whenCalculatingProbabilityOfEitherEventOccuring_thenShouldReturnZero(){
+        assertEquals(imposibleEvents,imposibleEvents.or(imposibleEvents));
+    }
 }
